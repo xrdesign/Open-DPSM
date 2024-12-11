@@ -7,7 +7,7 @@ Created on Mon Jul 10 14:15:02 2023
 
 # Pre-determined parameters: Don't change unless absolutely sure
 # boolean indicating whether or not to show frame-by-frame of each video with analysis results
-showVideoFrames = False
+showVideoFrames = True
 
 # boolean indicating whether or not to skip feature extraction of already analyzed videos.
 # If skipped, then video information is loaded (from pickle file with same name as video).

@@ -241,7 +241,7 @@ class event_extraction:
         #bigImg[:] = np.nan
         bigImg_centerx = int((bigImg.shape[1] -1 )/2) # This will be the new center of the data
         bigImg_centery = int((bigImg.shape[0] -1 )/2)
-        print(f"frame number is {frameNum}")
+        # print(f"frame number is {frameNum}")
         gazex = sampledgazexData[frameNum-1]
         gazey = sampledgazeyData[frameNum-1]
         finalImgShape = np.zeros(((int(np.ceil(np.shape(img)[0]-1)*A+1)), int(np.ceil((np.shape(img)[1]-1)*A+1)),np.shape(img)[2]),dtype = 'float32').shape

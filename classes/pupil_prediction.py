@@ -57,30 +57,9 @@ class pupil_prediction:
         rmse = self.root_mean_of_squares_modelContrast(res.x)
         self.res = res
         
-        # self.modelContrast(res0.x)
-        # r0,p0 = self.correlation(self.y_pred,  self.sampledpupilData)
-        # self.modelContrast(res1.x)
-        # r1,p1 = self.correlation(self.y_pred,  self.sampledpupilData)
-        # self.modelContrast(res2.x)
-        # r2,p2 = self.correlation(self.y_pred,  self.sampledpupilData)
-
-        # rmse0 = self.root_mean_of_squares_modelContrast(res0.x)
-        # rmse1 = self.root_mean_of_squares_modelContrast(res1.x)
-        # rmse2 = self.root_mean_of_squares_modelContrast(res2.x)
-        # if rmse0 <rmse1 and rmse0<rmse2:
-        #     res = res0
-        #     print("res0 chosen")
-        # elif rmse1 < rmse2 and rmse1< rmse0:
-        #     res = res1
-        #     print("res1 chosen")
-
-        # elif rmse2 < rmse1 and rmse2< rmse0:
-        #     res = res2
-        #     print("res2 chosen")
         self.list_modelResults = self.calculalte_parameters(self.y_pred,  self.sampledpupilData, len(bounds1), len(self.sampledpupilData[~np.isnan(self.sampledpupilData)]))
         print(self.list_modelResults)
        
-        
         self.save_modelResults(self.subject)
         self.save_modelData(self.subject)
         if self.useApp:
@@ -272,11 +251,11 @@ class pupil_prediction:
         return r, p
     
     def calculate_aic(self,n, mse, num_params):
-    	aic = n * np.log(mse) + 2 * num_params
-    	return aic
+        aic = n * np.log(mse) + 2 * num_params
+        return aic
     def calculate_bic(self,n, mse, num_params):
-    	bic = n * np.log(mse) + num_params * np.log(n)
-    	return bic
+        bic = n * np.log(mse) + num_params * np.log(n)
+        return bic
     def convolve_cum(self, rf, featureData):
         featureData_ConvRaw = np.convolve(-1 * featureData, rf)
         featureData_ConvRaw = np.cumsum(featureData_ConvRaw[0:len(featureData)])

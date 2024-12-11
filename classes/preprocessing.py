@@ -72,7 +72,7 @@ class preprocessing:
             self.readFrame()  # reads a frame from video
             if self.ret:
                 frameCount = frameCount+1
-                print(frameCount)
+                # print(frameCount)
             else:
                 break        
         # get the information of the video from moviepy (seems to be more accurate)
